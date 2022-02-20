@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](felipe-pedro.github.io/ecommerce)
+- Live Site URL: [You can see the site here](felipe-pedro.github.io/ecommerce)
 
 ## My process
 

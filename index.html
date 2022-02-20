@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img class="logo" src="images/logo.svg">
+    <nav>
+      <ul class="navigation">
+        <li><a class="gray-text" href="#">Collections</a></li>
+        <li><a class="gray-text" href="#">Men</a></li>
+        <li><a class="gray-text" href="#">Women</a></li>
+        <li><a class="gray-text" href="#">About</a></li>
+        <li><a class="gray-text" href="#">Contact</a></li>
+      </ul>
+      <ul class="user">
+        <li>
+          <div class="dropdown">
+            <button class="cart user-button pointer"><img class="cart-image" src="images/icon-cart.svg"></button>
+            <div class="cart-info">
+              <h2>Cart</h2>
+              <hr>
+              <div class="products-container">
+                <ul class="cart-filled"></ul>
+                <p class="empty-cart">Your cart is empty.</p>
+              </div>
+              <button class="go-to-cart pointer">Checkout</button>
+            </div>
+        </li>
+        <li><button class="user-button pointer"><img class="avatar" src="images/image-avatar.png"></button></li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+  <article>
+    <div class="product-images">
+      <img class="image-display" src="images/image-product-1.jpg">
+      <img class="image-display" src="images/image-product-2.jpg">
+      <img class="image-display" src="images/image-product-3.jpg">
+      <img class="image-display" src="images/image-product-4.jpg">
+      <ul class="images-navigator">
+        <li class="image-border pointer"><img class="thumbnail" src="images/image-product-1-thumbnail.jpg"></li>
+        <li class="image-border pointer"><img class="thumbnail" src="images/image-product-2-thumbnail.jpg"></li>
+        <li class="image-border pointer"><img class="thumbnail" src="images/image-product-3-thumbnail.jpg"></li>
+        <li class="image-border pointer"><img class="thumbnail" src="images/image-product-4-thumbnail.jpg"></li>
+      </ul>
+    </div>
+    <div class="product-info">
+      <p class="company-name orange-text">SNEAKER COMPANY</p>
+      <h1 class="product-name">Fall Limited Edition <br> Sneakers</h1>
+      <p class="product-description">
+        These low-profile sneakers are your perfect casual wear <br> companion. Featuring a durable rubber
+        outer sole, they'll <br> withstand everything the weather can offer
+      </p>
+      <div class="price-info">
+        <p class="price">$125.00</p>
+        <p class="discount orange-text">50%</p>
+      </div>
+      <p class="original-price gray-text">$250.00</p>
+      <div class="form">
+        <div class="quantity-all">
+          <button type="button" id="minus-button" class="adjust-quantity pointer"><img src="images/icon-minus.svg"></button>
+          <input class="quantity" type="text" name="quantity" value="0">
+          <button type="button" id="plus-button" class="adjust-quantity pointer"><img src="images/icon-plus.svg"></button>
+        </div>
+        <button class="add pointer" type="button">Add to cart</button>
+      </div>
+    </div>
+  </article>
+  <footer>
+    <p>Coded by: Felipe Pedro</p>
+  </footer>
+</body>
+<script type="text/javascript" src="dinamic.js"></script>
+</html>

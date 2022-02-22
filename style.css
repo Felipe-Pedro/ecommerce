@@ -53,6 +53,10 @@ header {
     border-bottom: 1px solid hsl(220, 14%, 75%);
 }
 
+.menu {
+    display: none;
+}
+
 .logo{
     height: fit-content;
     align-self: center;
@@ -361,4 +365,148 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+@media only screen and (max-width: 375px) {
+    html {
+        width: 100%;
+        height: 100vh;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 50px;
+        border: 0;
+    }
+
+    .menu {
+        height: 15px;
+        margin: 0 15px;
+        padding: 0;
+        display: block;
+        align-self: center;
+        outline: none;
+        border: none;
+        background-color: transparent;
+    }
+
+    .logo {
+        align-self: center;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .user {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .user button {
+        padding: 0;
+    }
+
+    .cart-image {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cart-info {
+        width: 95%;
+        height: 35%;
+        position: absolute;
+        right: 10px;
+    }
+
+    .avatar {
+        width: 25px;
+        height: 25px;
+    }
+
+    article {
+        flex-direction: column;
+    }
+
+    .product-images {
+        width: 100%;
+    }
+
+    .image-display {
+        width: 100%;
+        height: 90%;
+        border-radius: 0;
+    }
+
+    .images-navigator {
+        display: none;
+    }
+
+    .product-info {
+        margin: 0 25px;
+    }
+
+    .company-name {
+        margin-top: 0;
+    }
+
+    .product-name {
+        font-size: 30px;
+    }
+
+    .all-price-info {
+        margin: 0 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .price-info {
+        width: 83%;
+    }
+
+    .price {
+        font-size: 30px;
+    }
+
+    .discount {
+        font-size: 15px;
+    }
+
+    .original-price {
+        font-size: 18px;
+        margin: 0;
+        align-self: center;
+        justify-self: flex-end;
+    }
+
+    .form {
+        height: 110px;
+        flex-direction: column;
+    }
+
+    .quantity-all {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .quantity {
+        width: 100%;
+        align-self: center;
+    }
+
+    .add {
+        width: 100%;
+        height: 100%;
+        align-self: center;
+    }
 }

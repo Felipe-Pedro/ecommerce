@@ -282,6 +282,7 @@ article {
 }
 
 .product-description {
+    width: 380px;
     opacity: 40%;
     font-size: 14px;
 }
@@ -415,7 +416,7 @@ footer p {
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 1;
+        z-index: 3;
         background-color: white;
     }
 
@@ -458,6 +459,7 @@ footer p {
         height: 35%;
         position: absolute;
         right: 10px;
+        z-index: 2;
     }
 
     .avatar {
@@ -522,6 +524,7 @@ footer p {
     }
 
     .product-description {
+        width: 100%;
         margin: 15px 0;
         font-size: 14px;
         line-height: 20px;

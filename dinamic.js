@@ -12,11 +12,12 @@ var thumb = Array.from(document.querySelectorAll(".thumbnail"))
 var borders = document.querySelectorAll(".image-border")
 var display = document.querySelectorAll(".image-display")
 
-var lastActiveThumbnail = thumb[0]
-var lastActiveBorder = borders[0]
-var lastActiveImage = display[0]
+var currentIndex = 0
+var currentThumbnail = thumb[currentIndex]
+var currentBorder = borders[currentIndex]
+var currentImage = display[currentIndex]
 
-var previousButton = document.querySelector("#previously-button")
+var previousButton = document.querySelector("#previous-button")
 var nextButton = document.querySelector("#next-button")
 
 var cartButton = document.querySelector(".cart")
@@ -28,25 +29,25 @@ var emptyCart = document.querySelector(".empty-cart")
 var addToCartButton = document.querySelector(".add")
 var goToCartButton = document.querySelector(".go-to-cart")
 
-lastActiveImage.style = "display: flex"
-lastActiveThumbnail.style.opacity = "30%"
-lastActiveThumbnail.style.borderColor = "hsl(26, 100%, 55%)"
-lastActiveBorder.style.borderColor = "hsl(26, 100%, 55%)"
+currentImage.style = "display: flex"
+currentThumbnail.style.opacity = "30%"
+currentThumbnail.style.borderColor = "hsl(26, 100%, 55%)"
+currentBorder.style.borderColor = "hsl(26, 100%, 55%)"
 
-changeLastActiveBorder = function(thumbnail) {
-    lastActiveBorder.style.borderColor = "transparent"
-    lastActiveBorder = borders[thumb.indexOf(thumbnail)]
-    lastActiveBorder.style.borderColor = "hsl(26, 100%, 55%)"
+changeCurrentImage = function(image) {
+    currentImage.style.display = "none"
+    currentImage = image
+    currentImage.style.display = "flex"
 }
 
-changeLastActiveImage = function(thumbnail) {
-    lastActiveImage.style.display = "none"
-    lastActiveImage = display[thumb.indexOf(thumbnail)]
-    lastActiveImage.style.display = "flex"
-}
+previousButton.addEventListener("click", function() {
+    currentIndex = currentIndex === 0 ? 3 : currentIndex - 1
+    changeCurrentImage(display[currentIndex])
+})
 
 nextButton.addEventListener("click", function() {
-    changeLastActiveImage(thumb[thumb.indexOf(lastActiveThumbnail) + 1])
+    currentIndex = currentIndex === 3 ? 0 : currentIndex + 1
+    changeCurrentImage(display[currentIndex])
 })
 
 menuButton.addEventListener("click", function() {
@@ -162,6 +163,12 @@ plusButton.addEventListener("click", function() {
     checkQuantityValue()
 })
 
+changeCurrentBorder = function(border) {
+    currentBorder.style.borderColor = "transparent"
+    currentBorder = border
+    currentBorder.style.borderColor = "hsl(26, 100%, 55%)"
+}
+
 thumb.forEach(thumbnail => {
 
     thumbnail.onmouseenter = function() {
@@ -169,15 +176,15 @@ thumb.forEach(thumbnail => {
     }
 
     thumbnail.onmouseout = function() {
-        thumbnail.style.opacity = thumbnail == lastActiveThumbnail ? "30%" : "100%"
+        thumbnail.style.opacity = thumbnail == currentThumbnail ? "30%" : "100%"
     }
 
     thumbnail.addEventListener("click", function() {
-        lastActiveThumbnail.style.opacity = "100%"
+        currentThumbnail.style.opacity = "100%"
+        currentThumbnail = thumbnail
         thumbnail.style.opacity = "30%"
-        lastActiveThumbnail = thumbnail
 
-        changeLastActiveImage(thumbnail)
-        changeLastActiveBorder(thumbnail)
+        changeCurrentImage(display[thumb.indexOf(thumbnail)])
+        changeCurrentBorder(borders[thumb.indexOf(thumbnail)])
     })
 });

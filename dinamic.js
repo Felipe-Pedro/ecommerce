@@ -3,6 +3,11 @@ var plusButton = document.querySelector("#plus-button")
 
 var quantityInput = document.querySelector(".quantity")
 
+var menuButton = document.querySelector(".menu-button")
+var closeMenuButton = document.querySelector(".close-menu")
+
+var navigation = document.querySelector(".navigation")
+
 var thumb = Array.from(document.querySelectorAll(".thumbnail"))
 var borders = document.querySelectorAll(".image-border")
 var display = document.querySelectorAll(".image-display")
@@ -10,6 +15,9 @@ var display = document.querySelectorAll(".image-display")
 var lastActiveThumbnail = thumb[0]
 var lastActiveBorder = borders[0]
 var lastActiveImage = display[0]
+
+var previousButton = document.querySelector("#previously-button")
+var nextButton = document.querySelector("#next-button")
 
 var cartButton = document.querySelector(".cart")
 var cartInfo = document.querySelector(".cart-info")
@@ -24,6 +32,30 @@ lastActiveImage.style = "display: flex"
 lastActiveThumbnail.style.opacity = "30%"
 lastActiveThumbnail.style.borderColor = "hsl(26, 100%, 55%)"
 lastActiveBorder.style.borderColor = "hsl(26, 100%, 55%)"
+
+changeLastActiveBorder = function(thumbnail) {
+    lastActiveBorder.style.borderColor = "transparent"
+    lastActiveBorder = borders[thumb.indexOf(thumbnail)]
+    lastActiveBorder.style.borderColor = "hsl(26, 100%, 55%)"
+}
+
+changeLastActiveImage = function(thumbnail) {
+    lastActiveImage.style.display = "none"
+    lastActiveImage = display[thumb.indexOf(thumbnail)]
+    lastActiveImage.style.display = "flex"
+}
+
+nextButton.addEventListener("click", function() {
+    changeLastActiveImage(thumb[thumb.indexOf(lastActiveThumbnail) + 1])
+})
+
+menuButton.addEventListener("click", function() {
+    navigation.style.display = "flex"
+})
+
+closeMenuButton.addEventListener("click", function() {
+    navigation.style.display = "none"
+})
 
 deleteItemInCart = function(itemId) {
     Array.from(cartFilled.childNodes).some(item => {
@@ -129,18 +161,6 @@ plusButton.addEventListener("click", function() {
     quantityInput.value = parseInt(quantityInput.value) + 1
     checkQuantityValue()
 })
-
-changeLastActiveBorder = function(thumbnail) {
-    lastActiveBorder.style.borderColor = "transparent"
-    lastActiveBorder = borders[thumb.indexOf(thumbnail)]
-    lastActiveBorder.style.borderColor = "hsl(26, 100%, 55%)"
-}
-
-changeLastActiveImage = function(thumbnail) {
-    lastActiveImage.style.display = "none"
-    lastActiveImage = display[thumb.indexOf(thumbnail)]
-    lastActiveImage.style.display = "flex"
-}
 
 thumb.forEach(thumbnail => {
 

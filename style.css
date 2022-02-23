@@ -53,7 +53,7 @@ header {
     border-bottom: 1px solid hsl(220, 14%, 75%);
 }
 
-.menu {
+.menu-button {
     display: none;
 }
 
@@ -68,6 +68,10 @@ nav, .navigation {
 
 .navigation {
     height: 100%;
+}
+
+.close-menu {
+    display: none;
 }
 
 .navigation li {
@@ -229,6 +233,10 @@ article {
     align-content: center;
 }
 
+.buttons-container {
+    display: none;
+}
+
 .image-display {
     width: 370px;
     height: 370px;
@@ -381,11 +389,10 @@ footer p {
 
     header {
         width: 100%;
-        height: 50px;
         border: 0;
     }
 
-    .menu {
+    .menu-button {
         height: 15px;
         margin: 0 15px;
         padding: 0;
@@ -401,7 +408,35 @@ footer p {
     }
 
     .navigation {
+        width: 65%;
+        padding-left: 10px;
         display: none;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background-color: white;
+    }
+
+    .close-menu {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        padding: 0;
+        display: block;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .navigation li {
+        height: fit-content;
+        align-self: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .navigation a {
+        color: black;
+        font-size: 18px;
     }
 
     .user {
@@ -431,16 +466,41 @@ footer p {
     }
 
     article {
-        flex-direction: column;
+        display: block;
     }
 
     .product-images {
-        width: 100%;
+        height: fit-content;
+        display: block;
+    }
+
+    .buttons-container {
+        height: 0;
+        margin: 0 15px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 150px;
+        z-index: 1;
+    }
+
+    .change-image {
+        height: 35px;
+        width: 35px;
+        padding: 0;
+        border-radius: 100px;
+        border-color: transparent;
+        background-color: white;
+    }
+
+    .change-image img {
+        width: 8px;
+        height: 13px;
     }
 
     .image-display {
         width: 100%;
-        height: 90%;
+        height: 350px;
         border-radius: 0;
     }
 
@@ -453,25 +513,34 @@ footer p {
     }
 
     .company-name {
-        margin-top: 0;
+        margin: 15px 0;
     }
 
     .product-name {
-        font-size: 30px;
+        margin: 0;
+        font-size: 28px;
     }
 
-    .all-price-info {
-        margin: 0 10px;
+    .product-description {
+        margin: 15px 0;
+        font-size: 14px;
+        line-height: 20px;
+        opacity: 55%;
+    }
+
+    .price-container {
+        margin-bottom: 15px;
         display: flex;
         flex-direction: row;
     }
 
     .price-info {
-        width: 83%;
+        width: 100%;
     }
 
     .price {
         font-size: 30px;
+        margin-right: 10px;
     }
 
     .discount {
@@ -479,7 +548,7 @@ footer p {
     }
 
     .original-price {
-        font-size: 18px;
+        font-size: 17px;
         margin: 0;
         align-self: center;
         justify-self: flex-end;
@@ -508,5 +577,9 @@ footer p {
         width: 100%;
         height: 100%;
         align-self: center;
+    }
+
+    footer {
+        display: none;
     }
 }

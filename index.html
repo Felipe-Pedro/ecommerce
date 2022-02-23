@@ -11,10 +11,11 @@
 </head>
 <body>
   <header>
-    <button class="menu"><img src="images/icon-menu.svg"></button>
+    <button class="menu-button"><img src="images/icon-menu.svg"></button>
     <img class="logo" src="images/logo.svg">
     <nav>
       <ul class="navigation">
+        <li><button class="close-menu"><img src="images/icon-close.svg"></button></li>
         <li><a class="gray-text" href="#">Collections</a></li>
         <li><a class="gray-text" href="#">Men</a></li>
         <li><a class="gray-text" href="#">Women</a></li>
@@ -42,6 +43,10 @@
   </header>
   <article>
     <div class="product-images">
+      <div class="buttons-container">
+        <button id="previous-button" class="change-image"><img src="images/icon-previous.svg"></button>
+        <button id="next-button" class="change-image"><img src="images/icon-next.svg"></button>
+      </div>
       <img class="image-display" src="images/image-product-1.jpg">
       <img class="image-display" src="images/image-product-2.jpg">
       <img class="image-display" src="images/image-product-3.jpg">
@@ -58,9 +63,9 @@
       <h1 class="product-name">Fall Limited Edition <br> Sneakers</h1>
       <p class="product-description">
         These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber
-        outer sole, they'll withstand everything the weather can offer
+        outer sole, they'll withstand everything the weather can offer.
       </p>
-      <div class="all-price-info">
+      <div class="price-container">
         <div class="price-info">
           <p class="price">$125.00</p>
           <p class="discount orange-text">50%</p>
